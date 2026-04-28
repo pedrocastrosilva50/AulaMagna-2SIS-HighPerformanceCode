@@ -1,39 +1,44 @@
-package Abr07.Ex1;
+package Abr07.Ex3;
 
 public class FilaInt {
-    final int N = 10;
-    int dados[] = new int[N];
+    final int N = 3;
+    int dados[] = new int[3];
     int ini, fim, cont;
 
     public void init(){
         ini = fim = cont = 0;
     }
-    public boolean isEmpty(){
+
+    public boolean isEmpty() {
         return (cont == 0);
     }
-    public boolean isFull(){
+
+    public boolean isFull() {
         return (cont == N);
     }
-    public void enqueue(int elem){
+
+    public void enqueue(int elem) {
         if (isFull()){
-            System.out.println("Fila cheia!");
+            System.out.print("Fila Cheia !");
         }
-        else{
+        else {
             dados[fim] = elem;
             cont++;
-            /*
-            fim++;
-            if (fim==N) {
+         /* fim++;
+            if (fim == N){
                 fim = 0;
             }
-             */
-            fim = (fim+1) % N;
+         */
+            fim  = (fim+1) % N;
         }
     }
+
     public int dequeue(){
         int elem = dados[ini];
         cont--;
         ini = (ini+1) % N;
         return elem;
     }
+
+
 }

@@ -1,8 +1,8 @@
-package Abr07.Ex1;
+package Abr28.ex5.Consultorio;
 
-public class FilaInt {
+public class FilaString {
     final int N = 10;
-    int dados[] = new int[N];
+    String dados[] = new String[N];
     int ini, fim, cont;
 
     public void init(){
@@ -14,7 +14,7 @@ public class FilaInt {
     public boolean isFull(){
         return (cont == N);
     }
-    public void enqueue(int elem){
+    public void enqueue(String elem){
         if (isFull()){
             System.out.println("Fila cheia!");
         }
@@ -30,10 +30,11 @@ public class FilaInt {
             fim = (fim+1) % N;
         }
     }
-    public int dequeue(){
-        int elem = dados[ini];
+    public String dequeue(){
+        String elem = dados[ini];
         cont--;
         ini = (ini+1) % N;
         return elem;
     }
 }
+
